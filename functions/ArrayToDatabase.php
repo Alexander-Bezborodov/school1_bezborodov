@@ -328,3 +328,5 @@ function getLessonsByDateFromCommonTtimeTable(string $day_of_week, string $id): 
 
     return $result;
 }
+
+// Уточнена ответственность компонента: загрузка данных в базу.
