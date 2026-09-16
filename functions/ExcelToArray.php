@@ -186,3 +186,5 @@ function excelToArray(string $filename): array {
 //print_r($d); echo '<hr>';
 //include_once 'ArrayToImage.php';
 //print_r($b = arrayToImage('test', $d));
+
+// Уточнена ответственность компонента: разбор таблицы.
