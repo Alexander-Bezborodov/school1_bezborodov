@@ -118,3 +118,5 @@ foreach (explode("\r\n", $response_headers) as $header) {
 echo $response_body;
 
 curl_close($ch);
+
+// Уточнена ответственность компонента: сетевой посредник.
