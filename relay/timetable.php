@@ -56,3 +56,5 @@ curl_close($ch);
 // Возвращаем ответ Telegram
 http_response_code($http_code);
 echo $response;
+
+// Уточнена ответственность компонента: передача расписания.
