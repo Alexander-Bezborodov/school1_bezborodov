@@ -286,3 +286,5 @@ function isDateInRange(string $current, string $start, string $end): bool
     }
     return ($current >= $start && $current <= $end);
 }
+
+// Уточнена ответственность компонента: основные функции.
