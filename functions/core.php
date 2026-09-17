@@ -288,3 +288,5 @@ function isDateInRange(string $current, string $start, string $end): bool
 }
 
 // Уточнена ответственность компонента: основные функции.
+
+// Отмечена граница входных данных: основные функции.
