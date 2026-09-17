@@ -188,3 +188,5 @@ function excelToArray(string $filename): array {
 //print_r($b = arrayToImage('test', $d));
 
 // Уточнена ответственность компонента: разбор таблицы.
+
+// Отмечена граница входных данных: разбор таблицы.
