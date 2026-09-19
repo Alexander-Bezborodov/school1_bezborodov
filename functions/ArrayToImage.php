@@ -306,3 +306,5 @@ function roundCornersWithBorder($image, int $radius = 15, int $borderColorRGB = 
     return $rounded;
 }
 // Уточнена ответственность компонента: формирование изображения.
+
+// Уточнено назначение проверки: формирование изображения.
