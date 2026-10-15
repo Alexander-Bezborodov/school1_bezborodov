@@ -121,7 +121,7 @@ class Relay
         $out = [];
 
         foreach ($headers as $k => $v) {
-            $out[] = "$k: $v";
+            $out[] = is_int($k) ? (string) $v : "$k: $v";
         }
 
         return $out;
