@@ -158,6 +158,9 @@ function getFullWeekdayName(string $shortDay): string
 function getShortWeekdayByDate(?string $date = null): string
 {
     $timestamp = $date ? strtotime($date) : time();
+    if ($timestamp === false) {
+        throw new InvalidArgumentException('Invalid weekday date');
+    }
     $dayNum = (int) date('N', $timestamp);
     $days = [
         1 => 'Пн',
