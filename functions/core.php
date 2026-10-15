@@ -114,8 +114,9 @@ function generateTimetableByArray($timetable): string
             }
 
             $lessonSubject = formatLessonSubject($lesson[0]);
-            $subject = "<b>" . $lessonSubject . "</b>";
-            $teacherOrRoom = trim(($lesson[1] ?? '') . ' ' . ($lesson[2] ?? ''));
+            $subject = "<b>" . esc($lessonSubject) . "</b>";
+            $teacherOrRoom = esc(trim(($lesson[1] ?? '') . ' ' . ($lesson[2] ?? '')));
+            $time = esc($time);
 
             $body .= "$time $subject $teacherOrRoom\n";
         }
