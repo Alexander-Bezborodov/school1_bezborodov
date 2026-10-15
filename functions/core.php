@@ -151,7 +151,7 @@ function getFullWeekdayName(string $shortDay): string
         'сб' => 'Суббота',
         'вс' => 'Воскресенье',
     ];
-    $shortDay = ucfirst(mb_strtolower(trim($shortDay)));
+    $shortDay = mb_strtolower(rtrim(trim($shortDay), '.'));
     return $daysMap[$shortDay] ?? 'Неизвестный день';
 }
 
