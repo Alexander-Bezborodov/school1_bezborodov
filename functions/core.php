@@ -46,7 +46,8 @@ function writeLog(string $message): void
 {
     try {
         $line = date('[Y-m-d H:i:s] ') . $message . PHP_EOL;
-        file_put_contents($_SERVER["DOCUMENT_ROOT"] . '/log.txt', $line, FILE_APPEND | LOCK_EX);
+        $logRoot = !empty($_SERVER["DOCUMENT_ROOT"]) ? $_SERVER["DOCUMENT_ROOT"] : PROJECT_DIR;
+        file_put_contents(rtrim($logRoot, '/') . '/log.txt', $line, FILE_APPEND | LOCK_EX);
     } catch (Exception $e) {
     }
 }
