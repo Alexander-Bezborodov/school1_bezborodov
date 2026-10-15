@@ -11,6 +11,7 @@ class Relay
 
     public function __construct(string $relayUrl, string $secret, $logger = null)
     {
+        $relayUrl = trim($relayUrl);
         $this->relayUrl = $relayUrl;
         $this->secret = $secret;
         $this->enabled = $relayUrl !== '' && $secret !== '';
