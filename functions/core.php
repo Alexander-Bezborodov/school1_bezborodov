@@ -26,9 +26,10 @@ define('CLIENT_BOT_URL', getenv('CLIENT_BOT_URL') ?: 'https://t.me/school_shedul
 function authTeacher(): ?string
 {
     $name = $_SESSION['teacher'] ?? null;
-    if ($name === null) {
+    if (!is_string($name) || trim($name) === '') {
         return null;
     }
+    $name = trim($name);
     $formattedName =
         mb_strtoupper(mb_substr($name, 0, 1)) .
         mb_strtolower(mb_substr($name, 1));
