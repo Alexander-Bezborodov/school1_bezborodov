@@ -98,6 +98,7 @@ class Relay
 
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => min(3, $this->timeout),
             CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_CUSTOMREQUEST => $method,
             CURLOPT_HTTPHEADER => $this->normalizeHeaders($headers),
