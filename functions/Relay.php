@@ -62,6 +62,7 @@ class Relay
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST => true,
+            CURLOPT_CONNECTTIMEOUT => min(3, $this->timeout),
             CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
             CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE),
