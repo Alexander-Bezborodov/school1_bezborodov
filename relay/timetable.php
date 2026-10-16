@@ -35,7 +35,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 // Тело запроса (если есть)
 $body = file_get_contents('php://input');
 
-if (!empty($body)) {
+if ($body !== false && $body !== '') {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
 }
 
