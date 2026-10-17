@@ -48,7 +48,8 @@ $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 // Ошибка cURL
 if ($response === false) {
     http_response_code(500);
-    echo 'cURL error: ' . curl_error($ch);
+    error_log('Timetable relay upstream request failed');
+    echo 'Upstream request failed';
     curl_close($ch);
     exit;
 }
