@@ -32,7 +32,7 @@ function excelToArray(string $filename): array {
         $cols_count = $rows_count = 0;
 
         // Файл есть? Он XLSX?
-        if (!file_exists($filename))
+        if (!is_file($filename) || !is_readable($filename))
             return ['error' => 'Файл не существует'];
         $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
