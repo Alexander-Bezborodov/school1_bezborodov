@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_CUSTOM = 'custom';
+
     private string $token;
     private array $commands = [];
     private array $callbackHandlers = [];
@@ -658,7 +660,7 @@ class Bot
             return [
                 'regular' => $defaultRegular,
                 'bold' => $defaultBold,
-                'custom' => false
+                self::FIELD_KEY_CUSTOM => false
             ];
         }
 
