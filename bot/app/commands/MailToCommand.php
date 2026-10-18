@@ -2,6 +2,8 @@
 
 class MailToCommand
 {
+    private const FIELD_KEY_ID = 'id';
+
     private const FIELD_KEY_CHAT = 'chat';
 
     private Bot $bot;
@@ -19,7 +21,7 @@ class MailToCommand
      */
     public function execute(array $message, string $targetId, string $adminText): void
     {
-        $chatId = $message[self::FIELD_KEY_CHAT]['id'];
+        $chatId = $message[self::FIELD_KEY_CHAT][self::FIELD_KEY_ID];
 
         // Проверка прав администратора
         if (!$this->bot->isAdmin($chatId)) {
