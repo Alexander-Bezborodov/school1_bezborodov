@@ -3,6 +3,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class GetTimetableCommand
 {
+    private const FIELD_KEY_FILE = 'file';
+
     private const FIELD_KEY_ERROR = 'error';
 
     private Bot $bot;
@@ -143,7 +145,7 @@ class GetTimetableCommand
                     $this->bot->sendMessage($chatId, $data['error']);
                     return;
                 }
-                if (!isset($data['file'])) {
+                if (!isset($data[self::FIELD_KEY_FILE])) {
                     $this->bot->sendMessage($chatId, "Нет данных для изображения");
                     return;
                 }
