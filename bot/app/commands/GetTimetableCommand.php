@@ -3,6 +3,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class GetTimetableCommand
 {
+    private const FIELD_KEY_ERROR = 'error';
+
     private Bot $bot;
 
     public function __construct(Bot $bot)
@@ -137,7 +139,7 @@ class GetTimetableCommand
             if ($format === 'IMAGE') {
                 $font = $this->bot->getFontByUser($user);
                 $data = arrayToImage($classActive, $timetable, $font['regular'], $font['bold']);
-                if (isset($data['error'])) {
+                if (isset($data[self::FIELD_KEY_ERROR])) {
                     $this->bot->sendMessage($chatId, $data['error']);
                     return;
                 }
