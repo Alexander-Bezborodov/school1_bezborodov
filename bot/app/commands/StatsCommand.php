@@ -2,6 +2,8 @@
 
 class StatsCommand
 {
+    private const FIELD_KEY_COUNT = 'count';
+
     private Bot $bot;
 
     public function __construct(Bot $bot)
@@ -24,7 +26,7 @@ class StatsCommand
 
         // Получаем общее количество пользователей
         $curCountRow = DB::selectOne("SELECT COUNT(*) AS count FROM users");
-        $curCount = (int) $curCountRow['count'];
+        $curCount = (int) $curCountRow[self::FIELD_KEY_COUNT];
 
         // Подсчет активных за последние 6 часов
         $active24hRow = DB::selectOne("
