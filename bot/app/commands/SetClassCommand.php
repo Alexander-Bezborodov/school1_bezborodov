@@ -2,6 +2,8 @@
 
 class SetClassCommand
 {
+    private const FIELD_KEY_CHAT_ID = 'chat_id';
+
     private const FIELD_KEY_PARALLELS = 'parallels';
 
     private const FIELD_KEY_CLASSES = 'classes';
@@ -74,7 +76,7 @@ class SetClassCommand
                 "INSERT INTO users (chat_id, username, group_members_count)
              VALUES (:chat_id, :username, :group_members_count)",
                 [
-                    'chat_id' => $chatId,
+                    self::FIELD_KEY_CHAT_ID => $chatId,
                     'username' => $chatUsername,
                     'group_members_count' => $groupMembers
                 ]
