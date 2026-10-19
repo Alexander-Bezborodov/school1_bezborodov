@@ -2,6 +2,8 @@
 
 class SetClassCommand
 {
+    private const FIELD_KEY_CLASSES = 'classes';
+
     private const FIELD_KEY_USERNAME = 'username';
 
     private const FIELD_KEY_CHAT = 'chat';
@@ -32,7 +34,7 @@ class SetClassCommand
         // --- Парсинг классов и параллелей ---
         $result = $this->parseClassesAndParallels($message['text'], $hiddenClasses);
 
-        if (empty($result['classes']) && empty($result['parallels']) && empty($hiddenClasses)) {
+        if (empty($result[self::FIELD_KEY_CLASSES]) && empty($result['parallels']) && empty($hiddenClasses)) {
             $this->bot->sendMessage($chatId, "❌ Неверный формат классов или параллели");
             (new HelpCommand($this->bot))->execute($message);
             return;
