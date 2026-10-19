@@ -2,6 +2,8 @@
 
 class SetClassCommand
 {
+    private const FIELD_KEY_USERNAME = 'username';
+
     private const FIELD_KEY_CHAT = 'chat';
 
     private Bot $bot;
@@ -18,7 +20,7 @@ class SetClassCommand
     {
         $chatId = $message[self::FIELD_KEY_CHAT]['id'];
 
-        $chatUsername = $message['chat']['username'] ?? '';
+        $chatUsername = $message['chat'][self::FIELD_KEY_USERNAME] ?? '';
         $isGroup = $chatId < 0;
         $groupMembers = 0;
 
