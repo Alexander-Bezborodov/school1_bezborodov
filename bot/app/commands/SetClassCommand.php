@@ -2,6 +2,8 @@
 
 class SetClassCommand
 {
+    private const FIELD_KEY_CHAT = 'chat';
+
     private Bot $bot;
 
     public function __construct(Bot $bot)
@@ -14,7 +16,7 @@ class SetClassCommand
      */
     public function execute($user, array $message): void
     {
-        $chatId = $message['chat']['id'];
+        $chatId = $message[self::FIELD_KEY_CHAT]['id'];
 
         $chatUsername = $message['chat']['username'] ?? '';
         $isGroup = $chatId < 0;
