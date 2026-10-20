@@ -2,6 +2,8 @@
 
 class StatsCommand
 {
+    private const FIELD_KEY_USERNAME = 'username';
+
     private const FIELD_KEY_COUNT = 'count';
 
     private Bot $bot;
@@ -61,7 +63,7 @@ class StatsCommand
         }
 
         // Часто используемые значения
-        $userName = !empty($lastUser['username']) ? "@" . $lastUser['username'] : $lastUser['chat_id'];
+        $userName = !empty($lastUser[self::FIELD_KEY_USERNAME]) ? "@" . $lastUser['username'] : $lastUser['chat_id'];
         $vipPrefix = $lastUser['vip'] == 1 ? "👑 " : "";
         $now = new DateTime();
 
