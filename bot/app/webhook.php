@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE', 'message'); }
+
 if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE', 'type'); }
 use Shuchkin\Logger;
 
@@ -36,7 +38,7 @@ function RegisterSiteError(int $type, string $message, string $file, int $line, 
              VALUES (NOW(), :type, :message, :file, :line, :text)",
             [
                 \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE => $type,
-                'message' => $message,
+                \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE => $message,
                 'file' => $file,
                 'line' => $line,
                 'text' => $text
