@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE', 'type'); }
 use Shuchkin\Logger;
 
 set_time_limit(30);
@@ -33,7 +35,7 @@ function RegisterSiteError(int $type, string $message, string $file, int $line, 
             "INSERT INTO errors (creationtime, type, message, file, line, text)
              VALUES (NOW(), :type, :message, :file, :line, :text)",
             [
-                'type' => $type,
+                \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE => $type,
                 'message' => $message,
                 'file' => $file,
                 'line' => $line,
