@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_LINE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_LINE', 'line'); }
+
 if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE', 'file'); }
 
 if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE', 'message'); }
@@ -42,7 +44,7 @@ function RegisterSiteError(int $type, string $message, string $file, int $line, 
                 \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE => $type,
                 \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE => $message,
                 \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE => $file,
-                'line' => $line,
+                \APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_LINE => $line,
                 'text' => $text
             ]
         );
