@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_DIRS')) { define('APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_DIRS', 'deleted_dirs'); }
+
 if (!defined('APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES')) { define('APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES', 'deleted_files'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
@@ -17,7 +19,7 @@ $cacheDir = $_SERVER["DOCUMENT_ROOT"] . '/caches';
 $results = [
     'status' => 'ok',
     \APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES => 0,
-    'deleted_dirs' => 0,
+    \APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_DIRS => 0,
     'errors' => []
 ];
 
