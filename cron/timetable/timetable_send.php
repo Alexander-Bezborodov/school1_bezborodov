@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_CHAT_ID')) { define('APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_CHAT_ID', 'chat_id'); }
 use Shuchkin\Logger;
 
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
@@ -64,7 +66,7 @@ foreach ($users as $user) {
         break;
 
     try {
-        if (empty($user['chat_id'])) {
+        if (empty($user[\APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_CHAT_ID])) {
             $logger->log("User {$user['id']} ({$user['username']}) has no chat_id, skipping");
             continue;
         }
