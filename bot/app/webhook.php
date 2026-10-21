@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TOKEN')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TOKEN', 'token'); }
+
 if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_LINE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_LINE', 'line'); }
 
 if (!defined('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE')) { define('APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE', 'file'); }
@@ -75,7 +77,7 @@ foreach (glob(__DIR__ . '/commands/*Command.php') as $file) {
 }
 
 // --- Проверка токена в URL ---
-if (WEBHOOK_SECRET_TOKEN === '' || !isset($_GET['token']) || $_GET['token'] !== WEBHOOK_SECRET_TOKEN) {
+if (WEBHOOK_SECRET_TOKEN === '' || !isset($_GET[\APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TOKEN]) || $_GET['token'] !== WEBHOOK_SECRET_TOKEN) {
     $logger->log("Forbidden access attempt from {$_SERVER['REMOTE_ADDR']} - invalid token");
     http_response_code(403);
     exit('{Forbidden}');
