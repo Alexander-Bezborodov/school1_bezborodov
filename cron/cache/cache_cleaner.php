@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES')) { define('APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES', 'deleted_files'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 set_time_limit(50);
@@ -14,7 +16,7 @@ header('Content-Type: application/json; charset=utf-8');
 $cacheDir = $_SERVER["DOCUMENT_ROOT"] . '/caches';
 $results = [
     'status' => 'ok',
-    'deleted_files' => 0,
+    \APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES => 0,
     'deleted_dirs' => 0,
     'errors' => []
 ];
