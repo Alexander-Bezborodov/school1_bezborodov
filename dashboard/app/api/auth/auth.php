@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_CALLBACK')) { define('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_CALLBACK', 'callback'); }
+
 if (!defined('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_MESSAGE')) { define('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_MESSAGE', 'message'); }
 
 if (!defined('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS')) { define('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS', 'status'); }
@@ -28,7 +30,7 @@ try {
     if (Auth::login($token, $password)) {
         echo json_encode([
             'status' => 'ok',
-            'callback' => 'Вы успешно вошли в систему'
+            \APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_CALLBACK => 'Вы успешно вошли в систему'
         ]);
     } else {
         http_response_code(401);
