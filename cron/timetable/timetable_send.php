@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_STATUS')) { define('APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_STATUS', 'status'); }
+
 if (!defined('APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_CHAT_ID')) { define('APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_CHAT_ID', 'chat_id'); }
 use Shuchkin\Logger;
 
@@ -88,7 +90,7 @@ foreach ($users as $user) {
         $logger->log("Error sending message to user {$user['chat_id']}: " . $e->getMessage());
         $results[] = [
             'chat_id' => $user['chat_id'] ?? null,
-            'status' => 'error',
+            \APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_STATUS => 'error',
             'error' => $e->getMessage()
         ];
 
