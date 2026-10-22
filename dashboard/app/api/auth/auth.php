@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_MESSAGE')) { define('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_MESSAGE', 'message'); }
+
 if (!defined('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS')) { define('APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS', 'status'); }
 session_start();
 
@@ -9,7 +11,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode([\APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS => 'error', 'message' => 'Метод не разрешён']);
+    echo json_encode([\APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS => 'error', \APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_MESSAGE => 'Метод не разрешён']);
     exit;
 }
 
