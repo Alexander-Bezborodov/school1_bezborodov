@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DATE')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DATE', 'date'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 function databaseCreateTables(): void {
@@ -52,7 +54,7 @@ function clearOldTimeTables(): bool {
 
 function deleteOneDayByDate(string $date): bool {
     try {
-        $count = DB::selectOne('SELECT COUNT(*) as Count FROM `timetable` WHERE `date`=:date', ['date' => $date])['Count'];
+        $count = DB::selectOne('SELECT COUNT(*) as Count FROM `timetable` WHERE `date`=:date', [\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DATE => $date])['Count'];
     } catch (Exception $e) {
         return false;
     }
