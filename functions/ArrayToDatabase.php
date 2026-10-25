@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_ID')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_ID', 'id'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DATE')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DATE', 'date'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
@@ -176,7 +178,7 @@ function arrayToDatabase(array $inputData): string {
             if ($day_of_week_key == $day_in_array)
                 foreach ($lessons as $number => $lesson)
                     $items[] = [
-                        'id' => $teacher_or_class_key,
+                        \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_ID => $teacher_or_class_key,
                         'date' => $date_from_name,
                         'time' => $lesson['time'],
                         'number' => $number,
