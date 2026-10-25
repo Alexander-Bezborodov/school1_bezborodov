@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT', 'sort'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER', 'number'); }
 
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TIME')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TIME', 'time'); }
@@ -186,7 +188,7 @@ function arrayToDatabase(array $inputData): string {
                         'date' => $date_from_name,
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TIME => $lesson['time'],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER => $number,
-                        'sort' => $lesson['sort'],
+                        \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT => $lesson['sort'],
                         'lesson' => $lesson['0'],
                         'teacher_or_class' => $lesson['1'],
                         'cabinet' => $lesson['2'] ?? ''
