@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUM')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUM', 'num'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK', 'day_of_week'); }
 
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET', 'cabinet'); }
@@ -326,7 +328,7 @@ function getLessonsByDate(string $date, string $id): array {
     $result = [];
 
     foreach ($rows as $row)
-        $result[$row['number']] = ['num' => $row['number'], 'time' => $row['time'], '0' => $row['lesson'], '1' => $row['teacher_or_class'], '2' => $row['cabinet']];
+        $result[$row['number']] = [\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUM => $row['number'], 'time' => $row['time'], '0' => $row['lesson'], '1' => $row['teacher_or_class'], '2' => $row['cabinet']];
 
     return $result;
 }
