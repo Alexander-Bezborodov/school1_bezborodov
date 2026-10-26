@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_TIME')) { define('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_TIME', 'time'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_ERROR')) { define('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_ERROR', 'error'); }
 
 if (!defined('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE')) { define('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE', 'file'); }
@@ -55,7 +57,7 @@ function arrayToImage(string $imageName, array $inputData, string $regularFont, 
     $data = [];
 
     foreach ($inputData as $lesson) {
-        if (!isset($lesson['time']) || !isset($lesson[0]) || !isset($lesson[1]) || !isset($lesson[2]))
+        if (!isset($lesson[\APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_TIME]) || !isset($lesson[0]) || !isset($lesson[1]) || !isset($lesson[2]))
             return ['error' => 'Ошибка: Для графического расписания переданы неверные данные.'];
 
         $subject = formatLessonSubject($lesson[0]);
