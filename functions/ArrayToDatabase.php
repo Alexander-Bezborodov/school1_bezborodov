@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET', 'cabinet'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS', 'teacher_or_class'); }
 
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_LESSON')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_LESSON', 'lesson'); }
@@ -195,7 +197,7 @@ function arrayToDatabase(array $inputData): string {
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT => $lesson['sort'],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_LESSON => $lesson['0'],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS => $lesson['1'],
-                        'cabinet' => $lesson['2'] ?? ''
+                        \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET => $lesson['2'] ?? ''
                     ];
 
     if (!count($items))
