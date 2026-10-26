@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_FUNCTIONS_EXCELTOARRAY_PHP_FIELD_KEY_ERROR')) { define('APP_FUNCTIONS_EXCELTOARRAY_PHP_FIELD_KEY_ERROR', 'error'); }
 //https://github.com/shuchkin/simplexlsx
 require_once __DIR__ . "/SimpleXLSX.php";
 
@@ -33,7 +35,7 @@ function excelToArray(string $filename): array {
 
         // Файл есть? Он XLSX?
         if (!is_file($filename) || !is_readable($filename))
-            return ['error' => 'Файл не существует'];
+            return [\APP_FUNCTIONS_EXCELTOARRAY_PHP_FIELD_KEY_ERROR => 'Файл не существует'];
         $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
         if ($ext !== 'xlsx')
