@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE')) { define('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE', 'file'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 // Принимает на вход массив:
@@ -34,7 +36,7 @@ function arrayToImage(string $imageName, array $inputData, string $regularFont, 
 
     // Кэш
     if (file_exists($filename))
-        return ['file' => $filename];
+        return [\APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE => $filename];
 
     // Проверка шрифтов
     if (!file_exists($regularFont) || !file_exists($boldFont))
