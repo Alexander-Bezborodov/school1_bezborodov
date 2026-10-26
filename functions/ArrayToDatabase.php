@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK', 'day_of_week'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET', 'cabinet'); }
 
 if (!defined('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS')) { define('APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS', 'teacher_or_class'); }
@@ -230,7 +232,7 @@ function commonTimeTablesToDatabase(array $inputData): string {
             foreach ($lessons as $number => $lesson)
                 $items[] = [
                     'id' => $teacher_or_class_key,
-                    'day_of_week' => $day_of_week_key,
+                    \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK => $day_of_week_key,
                     'time' => $lesson['time'],
                     'number' => $number,
                     'sort' => $lesson['sort'],
