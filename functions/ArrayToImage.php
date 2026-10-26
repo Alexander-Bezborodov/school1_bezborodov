@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_ERROR')) { define('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_ERROR', 'error'); }
+
 if (!defined('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE')) { define('APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE', 'file'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
@@ -40,7 +42,7 @@ function arrayToImage(string $imageName, array $inputData, string $regularFont, 
 
     // Проверка шрифтов
     if (!file_exists($regularFont) || !file_exists($boldFont))
-        return ['error' => "Ошибка: шрифт не найден. Проверьте пути к файлам."];
+        return [\APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_ERROR => "Ошибка: шрифт не найден. Проверьте пути к файлам."];
 
     $colWidths = [0, 0, 0, 0];
 
