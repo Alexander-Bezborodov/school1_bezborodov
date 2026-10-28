@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_PATH = 'path';
+
     private const FIELD_KEY_EXPIRES = 'expires';
 
     private static string $secretKey;
@@ -95,7 +97,7 @@ final class Auth
         $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
         setcookie($name, $value, [
             self::FIELD_KEY_EXPIRES => $expires,
-            'path' => '/',
+            self::FIELD_KEY_PATH => '/',
             'domain' => '',
             'secure' => $secure,
             'httponly' => true,
