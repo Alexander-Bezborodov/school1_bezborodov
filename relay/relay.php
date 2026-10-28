@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_RELAY_RELAY_PHP_FIELD_KEY_URL')) { define('APP_RELAY_RELAY_PHP_FIELD_KEY_URL', 'url'); }
+
 if (!defined('APP_RELAY_RELAY_PHP_FIELD_KEY_SECRET')) { define('APP_RELAY_RELAY_PHP_FIELD_KEY_SECRET', 'secret'); }
 
 // === CONFIG ===
@@ -29,7 +31,7 @@ if (!isset($data[\APP_RELAY_RELAY_PHP_FIELD_KEY_SECRET]) || $data['secret'] !== 
 }
 
 // Валидация URL
-if (!isset($data['url'])) {
+if (!isset($data[\APP_RELAY_RELAY_PHP_FIELD_KEY_URL])) {
     http_response_code(400);
     echo "Missing url";
     exit;
