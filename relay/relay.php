@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_RELAY_RELAY_PHP_FIELD_KEY_SECRET')) { define('APP_RELAY_RELAY_PHP_FIELD_KEY_SECRET', 'secret'); }
+
 // === CONFIG ===
 $SECRET_KEY = getenv('RELAY_SECRET_TOKEN') ?: '';
 
@@ -20,7 +22,7 @@ if (!is_array($data)) {
 }
 
 // Проверка secret
-if (!isset($data['secret']) || $data['secret'] !== $SECRET_KEY) {
+if (!isset($data[\APP_RELAY_RELAY_PHP_FIELD_KEY_SECRET]) || $data['secret'] !== $SECRET_KEY) {
     http_response_code(403);
     echo "Forbidden";
     exit;
