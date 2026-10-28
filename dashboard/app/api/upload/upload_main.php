@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR', 'error'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . '/functions/core.php';
 
 Auth::requireAuth(true, false, true);
@@ -14,7 +16,7 @@ $allowed_extensions = ['xlsx'];
 $commonFlag = ($_GET["common"] ?? '') === "true";
 
 if (!$file) {
-    $result_data['error'] = 'Файл не был загружен.';
+    $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Файл не был загружен.';
 } elseif (!empty($file['error'])) {
     // Обработка ошибок загрузки файла
     switch ($file['error']) {
