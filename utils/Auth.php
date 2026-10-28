@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_EXPIRES = 'expires';
+
     private static string $secretKey;
     private static string $cipher = 'AES-256-CBC';
     private static int $cookieLifetime = 60 * 60 * 24 * 30; // 30 дней
@@ -92,7 +94,7 @@ final class Auth
     {
         $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
         setcookie($name, $value, [
-            'expires' => $expires,
+            self::FIELD_KEY_EXPIRES => $expires,
             'path' => '/',
             'domain' => '',
             'secure' => $secure,
