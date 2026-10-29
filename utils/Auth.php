@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_DOMAIN = 'domain';
+
     private const FIELD_KEY_PATH = 'path';
 
     private const FIELD_KEY_EXPIRES = 'expires';
@@ -98,7 +100,7 @@ final class Auth
         setcookie($name, $value, [
             self::FIELD_KEY_EXPIRES => $expires,
             self::FIELD_KEY_PATH => '/',
-            'domain' => '',
+            self::FIELD_KEY_DOMAIN => '',
             'secure' => $secure,
             'httponly' => true,
             'samesite' => 'Lax',
