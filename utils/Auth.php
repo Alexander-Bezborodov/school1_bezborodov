@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_ID = 'id';
+
     private const FIELD_KEY_SAMESITE = 'samesite';
 
     private const FIELD_KEY_HTTPONLY = 'httponly';
@@ -156,7 +158,7 @@ final class Auth
 
         // Подготавливаем полезную нагрузку auth_key (без пароля)
         $payload = [
-            'id' => (int)$user['id'],
+            self::FIELD_KEY_ID => (int)$user['id'],
             'token' => $token,
             'exp' => time() + self::$cookieLifetime,
         ];
