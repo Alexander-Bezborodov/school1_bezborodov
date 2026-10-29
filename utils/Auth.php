@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_HTTPONLY = 'httponly';
+
     private const FIELD_KEY_SECURE = 'secure';
 
     private const FIELD_KEY_DOMAIN = 'domain';
@@ -104,7 +106,7 @@ final class Auth
             self::FIELD_KEY_PATH => '/',
             self::FIELD_KEY_DOMAIN => '',
             self::FIELD_KEY_SECURE => $secure,
-            'httponly' => true,
+            self::FIELD_KEY_HTTPONLY => true,
             'samesite' => 'Lax',
         ]);
         // Обновляем локальный массив чтобы дальнейший код видел новые значения
