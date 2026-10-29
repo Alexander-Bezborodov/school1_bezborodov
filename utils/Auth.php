@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_SAMESITE = 'samesite';
+
     private const FIELD_KEY_HTTPONLY = 'httponly';
 
     private const FIELD_KEY_SECURE = 'secure';
@@ -107,7 +109,7 @@ final class Auth
             self::FIELD_KEY_DOMAIN => '',
             self::FIELD_KEY_SECURE => $secure,
             self::FIELD_KEY_HTTPONLY => true,
-            'samesite' => 'Lax',
+            self::FIELD_KEY_SAMESITE => 'Lax',
         ]);
         // Обновляем локальный массив чтобы дальнейший код видел новые значения
         $_COOKIE[$name] = $value;
