@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_TOKEN = 'token';
+
     private const FIELD_KEY_ID = 'id';
 
     private const FIELD_KEY_SAMESITE = 'samesite';
@@ -159,7 +161,7 @@ final class Auth
         // Подготавливаем полезную нагрузку auth_key (без пароля)
         $payload = [
             self::FIELD_KEY_ID => (int)$user['id'],
-            'token' => $token,
+            self::FIELD_KEY_TOKEN => $token,
             'exp' => time() + self::$cookieLifetime,
         ];
         $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE);
