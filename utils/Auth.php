@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_SECURE = 'secure';
+
     private const FIELD_KEY_DOMAIN = 'domain';
 
     private const FIELD_KEY_PATH = 'path';
@@ -101,7 +103,7 @@ final class Auth
             self::FIELD_KEY_EXPIRES => $expires,
             self::FIELD_KEY_PATH => '/',
             self::FIELD_KEY_DOMAIN => '',
-            'secure' => $secure,
+            self::FIELD_KEY_SECURE => $secure,
             'httponly' => true,
             'samesite' => 'Lax',
         ]);
