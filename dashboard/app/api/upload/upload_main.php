@@ -19,7 +19,7 @@ if (!$file) {
     $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Файл не был загружен.';
 } elseif (!empty($file[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR])) {
     // Обработка ошибок загрузки файла
-    switch ($file['error']) {
+    switch ($file[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR]) {
         case UPLOAD_ERR_INI_SIZE:
         case UPLOAD_ERR_FORM_SIZE:
             $result_data['error'] = 'Превышен допустимый размер файла.';
