@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_KEY')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_KEY', 'key'); }
+
 
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
@@ -45,7 +47,7 @@ try {
     // -------------------------
     $teacher = DB::selectOne(
         "SELECT name FROM users__teachers WHERE access_key = :key LIMIT 1",
-        ['key' => $key]
+        [\APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_KEY => $key]
     );
 
     if (!$teacher) {
