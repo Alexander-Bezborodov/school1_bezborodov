@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH', 'path'); }
+
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_EXPIRES')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_EXPIRES', 'expires'); }
 
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_KEY')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_KEY', 'key'); }
@@ -86,7 +88,7 @@ try {
         session_id(),
         [
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_EXPIRES => $now + 60 * 60 * 24 * 30,
-            'path' => '/',
+            \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH => '/',
             'httponly' => true,
             'secure' => isset($_SERVER['HTTPS']),
             'samesite' => 'Lax'
