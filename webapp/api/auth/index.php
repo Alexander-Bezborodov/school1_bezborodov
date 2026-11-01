@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SAMESITE')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SAMESITE', 'samesite'); }
+
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE', 'secure'); }
 
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_HTTPONLY')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_HTTPONLY', 'httponly'); }
@@ -95,7 +97,7 @@ try {
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH => '/',
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_HTTPONLY => true,
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE => isset($_SERVER['HTTPS']),
-            'samesite' => 'Lax'
+            \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SAMESITE => 'Lax'
         ]
     );
 
