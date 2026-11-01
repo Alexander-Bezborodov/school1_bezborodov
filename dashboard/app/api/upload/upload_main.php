@@ -22,7 +22,7 @@ if (!$file) {
     switch ($file[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR]) {
         case UPLOAD_ERR_INI_SIZE:
         case UPLOAD_ERR_FORM_SIZE:
-            $result_data['error'] = 'Превышен допустимый размер файла.';
+            $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Превышен допустимый размер файла.';
             break;
         case UPLOAD_ERR_PARTIAL:
             $result_data['error'] = 'Файл был получен только частично.';
