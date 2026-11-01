@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SUCCESS')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SUCCESS', 'success'); }
+
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SAMESITE')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SAMESITE', 'samesite'); }
 
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE', 'secure'); }
@@ -115,7 +117,7 @@ try {
     );
     setcookie('llt_time', '', time() - 3600, '/');
 
-    echo json_encode(['success' => true]);
+    echo json_encode([\APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SUCCESS => true]);
 
 } catch (Throwable $e) {
     http_response_code(400);
