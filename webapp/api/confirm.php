@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_SUCCESS')) { define('APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_SUCCESS', 'success'); }
+
 if (!defined('APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_CONFIRMED')) { define('APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_CONFIRMED', 'confirmed'); }
 
 
@@ -27,7 +29,7 @@ if ($confirmed) {
     );
 
     echo json_encode([
-        'success' => true
+        \APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_SUCCESS => true
     ]);
     exit;
 }
