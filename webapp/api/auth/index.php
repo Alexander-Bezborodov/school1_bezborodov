@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE', 'secure'); }
+
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_HTTPONLY')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_HTTPONLY', 'httponly'); }
 
 if (!defined('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH')) { define('APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH', 'path'); }
@@ -92,7 +94,7 @@ try {
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_EXPIRES => $now + 60 * 60 * 24 * 30,
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH => '/',
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_HTTPONLY => true,
-            'secure' => isset($_SERVER['HTTPS']),
+            \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE => isset($_SERVER['HTTPS']),
             'samesite' => 'Lax'
         ]
     );
