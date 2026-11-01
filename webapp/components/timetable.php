@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT')) { define('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT', 'select'); }
+
 
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 ini_set('display_errors', '1');
@@ -19,7 +21,7 @@ $teacherAccount = authTeacher() ?? null;
 // Текущие выбранные классы из GET или COOKIE
 $selected = [];
 
-if (!empty($_GET['select'])) {
+if (!empty($_GET[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT])) {
     $selected = explode(',', $_GET['select']);
 } elseif (!empty($_COOKIE['classes'])) {
     $selected = explode(',', $_COOKIE['classes']);
