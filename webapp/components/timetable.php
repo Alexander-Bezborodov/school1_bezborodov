@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES')) { define('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES', 'classes'); }
+
 if (!defined('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT')) { define('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT', 'select'); }
 
 
@@ -23,7 +25,7 @@ $selected = [];
 
 if (!empty($_GET[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT])) {
     $selected = explode(',', $_GET['select']);
-} elseif (!empty($_COOKIE['classes'])) {
+} elseif (!empty($_COOKIE[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES])) {
     $selected = explode(',', $_COOKIE['classes']);
 }
 
