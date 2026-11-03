@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_OK = 'ok';
+
     private const FIELD_KEY_REPLY_MARKUP = 'reply_markup';
 
     private const FIELD_KEY_PARSE_MODE = 'parse_mode';
@@ -480,7 +482,7 @@ class Bot
 
         $result = json_decode($response, true);
 
-        return isset($result['ok']) && $result['ok'];
+        return isset($result[self::FIELD_KEY_OK]) && $result['ok'];
     }
 
     public function deleteMessage($chatId, $messageId): bool
