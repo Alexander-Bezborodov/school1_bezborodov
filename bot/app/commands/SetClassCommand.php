@@ -44,7 +44,7 @@ class SetClassCommand
             return;
         }
 
-        $allClasses = $result['classes'] ?? [];
+        $allClasses = $result[self::FIELD_KEY_CLASSES] ?? [];
         $availableClasses = getLastListOfClasses();
 
         foreach ($allClasses as $class) {
