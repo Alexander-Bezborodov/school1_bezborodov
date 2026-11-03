@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_CALLBACK_QUERY = 'callback_query';
+
     private const FIELD_KEY_CUSTOM = 'custom';
 
     private string $token;
@@ -93,7 +95,7 @@ class Bot
         }
 
         // --- Обработка callback_query ---
-        if (isset($update['callback_query'])) {
+        if (isset($update[self::FIELD_KEY_CALLBACK_QUERY])) {
             $callback = $update['callback_query'];
             $callbackId = $callback['id'];
             $data = $callback['data'];
