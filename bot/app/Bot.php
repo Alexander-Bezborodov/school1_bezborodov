@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_PARSE_MODE = 'parse_mode';
+
     private const FIELD_KEY_CALLBACK_QUERY = 'callback_query';
 
     private const FIELD_KEY_CUSTOM = 'custom';
@@ -435,7 +437,7 @@ class Bot
         $data = [
             'chat_id' => $chatId,
             'text' => $text,
-            'parse_mode' => 'HTML'
+            self::FIELD_KEY_PARSE_MODE => 'HTML'
         ];
 
         if ($keyboard) {
