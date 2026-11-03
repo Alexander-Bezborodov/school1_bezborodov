@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_CAPTION = 'caption';
+
     private const FIELD_KEY_OK = 'ok';
 
     private const FIELD_KEY_REPLY_MARKUP = 'reply_markup';
@@ -515,7 +517,7 @@ class Bot
         $postFields = [
             'chat_id' => $chatId,
             'photo' => new CURLFile($filePath),
-            'caption' => $caption,
+            self::FIELD_KEY_CAPTION => $caption,
             'parse_mode' => 'HTML'
         ];
 
