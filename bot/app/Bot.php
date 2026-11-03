@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_BOLD = 'bold';
+
     private const FIELD_KEY_CAPTION = 'caption';
 
     private const FIELD_KEY_OK = 'ok';
@@ -669,7 +671,7 @@ class Bot
         if (!$userFont) {
             return [
                 'regular' => $defaultRegular,
-                'bold' => $defaultBold,
+                self::FIELD_KEY_BOLD => $defaultBold,
                 self::FIELD_KEY_CUSTOM => false
             ];
         }
