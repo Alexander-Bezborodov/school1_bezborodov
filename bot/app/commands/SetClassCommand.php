@@ -88,7 +88,7 @@ class SetClassCommand
         if (empty($hiddenClasses)) {
             $sql = "UPDATE users 
                 SET class_list = :class_list" .
-                (count($result['classes']) === 1 ? ", class_start = COALESCE(class_start, :class_start)" : "") . "
+                (count($result[self::FIELD_KEY_CLASSES]) === 1 ? ", class_start = COALESCE(class_start, :class_start)" : "") . "
                 WHERE chat_id = :chat_id";
 
             $params = ['class_list' => $classJson, 'chat_id' => $chatId];
