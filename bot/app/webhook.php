@@ -59,7 +59,7 @@ function shutdown_notify()
 {
     // https://www.w3bai.com/ru/php/php_ref_error.html#gsc.tab=0
     $error = error_get_last();
-    if (empty($error) || $error['type'] == 0 || $error['type'] == E_NOTICE) return;
+    if (empty($error) || $error[\APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_TYPE] == 0 || $error['type'] == E_NOTICE) return;
 
     if ($error['type'] == E_ERROR && mb_strpos($error['message'], 'Maximum execution time') !== false) {
         die("<p>Формирование страницы затянулось на продолжительное время и было остановлено</p>");
