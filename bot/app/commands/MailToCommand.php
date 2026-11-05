@@ -30,7 +30,7 @@ class MailToCommand
         }
 
         // Проверка $message и chat_id
-        if (!isset($message['chat']['id'])) {
+        if (!isset($message['chat'][self::FIELD_KEY_ID])) {
             $this->bot->sendMessage($chatId, "⛔ Не передан chat_id в сообщении");
             return;
         }
