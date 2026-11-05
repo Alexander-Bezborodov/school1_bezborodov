@@ -25,7 +25,7 @@ if (!$file) {
             $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Превышен допустимый размер файла.';
             break;
         case UPLOAD_ERR_PARTIAL:
-            $result_data['error'] = 'Файл был получен только частично.';
+            $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Файл был получен только частично.';
             break;
         case UPLOAD_ERR_NO_FILE:
             $result_data['error'] = 'Файл не был загружен.';
