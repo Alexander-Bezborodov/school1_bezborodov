@@ -54,7 +54,7 @@ class SetClassCommand
             }
         }
 
-        if (!empty($result['parallels'])) {
+        if (!empty($result[self::FIELD_KEY_PARALLELS])) {
             foreach ($result['parallels'] as $parallel) {
                 $num = (int) $parallel;
                 $pattern = ($num >= 1 && $num <= 9) ? '/^' . $num . '[^0-9]/u' : '/^' . $num . '/u';
