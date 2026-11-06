@@ -36,7 +36,7 @@ try {
         http_response_code(401);
         echo json_encode([
             'status' => 'error',
-            'callback' => 'Неверный логин или ключ'
+            \APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_CALLBACK => 'Неверный логин или ключ'
         ]);
     }
 } catch (Exception $e) {
