@@ -66,7 +66,7 @@ function shutdown_notify()
     } elseif ($error['type'] == E_WARNING && mb_strpos($error['message'], 'mysqli_free_result()') !== false) {
         // не интересует
     } else {
-        RegisterSiteError($error['type'], $error['message'], $error['file'], $error['line']);
+        RegisterSiteError($error['type'], $error['message'], $error[\APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE], $error['line']);
     }
 }
 
