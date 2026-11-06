@@ -75,7 +75,7 @@ foreach ($users as $user) {
 
         $bot->getTimetable([
             'chat' => [
-                'id' => $user['chat_id']
+                'id' => $user[\APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_CHAT_ID]
             ]
         ], false, $user, true, true);
 
