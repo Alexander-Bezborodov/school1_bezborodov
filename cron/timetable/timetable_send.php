@@ -99,7 +99,7 @@ foreach ($users as $user) {
 }
 
 echo json_encode([
-    'status' => 'ok',
+    \APP_CRON_TIMETABLE_TIMETABLE_SEND_PHP_FIELD_KEY_STATUS => 'ok',
     'processed' => $processed,
     'results' => $results
 ], JSON_UNESCAPED_UNICODE);
