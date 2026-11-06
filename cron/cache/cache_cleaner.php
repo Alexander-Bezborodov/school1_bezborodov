@@ -49,7 +49,7 @@ function deleteDirectory($dir, &$results) {
             }
         } else {
             if (@unlink($path)) {
-                $results['deleted_files']++;
+                $results[\APP_CRON_CACHE_CACHE_CLEANER_PHP_FIELD_KEY_DELETED_FILES]++;
             } else {
                 $results['errors'][] = "Failed to delete file: $path";
             }
