@@ -93,7 +93,7 @@ class SetClassCommand
 
             $params = ['class_list' => $classJson, self::FIELD_KEY_CHAT_ID => $chatId];
             if (count($result[self::FIELD_KEY_CLASSES]) === 1)
-                $params['class_start'] = $result['classes'][0];
+                $params['class_start'] = $result[self::FIELD_KEY_CLASSES][0];
 
             DB::execute($sql, $params);
         }
