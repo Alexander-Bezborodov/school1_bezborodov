@@ -233,7 +233,7 @@ function commonTimeTablesToDatabase(array $inputData): string {
         foreach ($dow as $day_of_week_key => $lessons)
             foreach ($lessons as $number => $lesson)
                 $items[] = [
-                    'id' => $teacher_or_class_key,
+                    \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_ID => $teacher_or_class_key,
                     \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK => $day_of_week_key,
                     'time' => $lesson['time'],
                     'number' => $number,
