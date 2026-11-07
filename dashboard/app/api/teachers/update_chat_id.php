@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY')) { define('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY', 'access_key'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 error_reporting(E_ALL);
@@ -56,7 +58,7 @@ try {
             "UPDATE users__teachers SET chat_id = ? WHERE LOWER(name) = ?",
             [$chatId, $teacherLower]
         );
-        $accessKey = $existing['access_key'] ?? null; // оставляем старый ключ
+        $accessKey = $existing[\APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY] ?? null; // оставляем старый ключ
     } else {
         function uuid5($namespace, $name)
         {
