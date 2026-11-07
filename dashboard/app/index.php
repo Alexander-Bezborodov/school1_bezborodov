@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH')) { define('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH', 'path'); }
+
 
 $allowedIp = getenv('DEBUG_IP') ?: '';
 
@@ -81,7 +83,7 @@ if (session_status() === PHP_SESSION_NONE) {
     $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
     session_set_cookie_params([
         'lifetime' => $cookieParams['lifetime'],
-        'path' => $cookieParams['path'] ?? '/',
+        \APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH => $cookieParams['path'] ?? '/',
         'domain' => $cookieParams['domain'] ?? '',
         'secure' => $secure,
         'httponly' => true,
