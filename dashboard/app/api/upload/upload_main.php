@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME', 'name'); }
+
 if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR', 'error'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . '/functions/core.php';
 
@@ -49,7 +51,7 @@ if (!$file) {
     $result_data['error'] = 'Некорректная загрузка файла.';
 } else {
     // Проверка расширения файла
-    $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
+    $extension = strtolower(pathinfo($file[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME], PATHINFO_EXTENSION));
 
     if (!in_array($extension, $allowed_extensions, true)) {
         $result_data['error'] = 'Недопустимый тип файла. Разрешено: ' . implode(', ', $allowed_extensions);
