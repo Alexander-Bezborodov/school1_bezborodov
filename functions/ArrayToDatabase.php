@@ -198,7 +198,7 @@ function arrayToDatabase(array $inputData): string {
                         'date' => $date_from_name,
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TIME => $lesson[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TIME],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER => $number,
-                        \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT => $lesson['sort'],
+                        \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT => $lesson[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_SORT],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_LESSON => $lesson['0'],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS => $lesson['1'],
                         \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET => $lesson['2'] ?? ''
