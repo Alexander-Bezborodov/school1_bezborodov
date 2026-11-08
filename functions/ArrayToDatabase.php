@@ -240,7 +240,7 @@ function commonTimeTablesToDatabase(array $inputData): string {
                     'sort' => $lesson['sort'],
                     \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_LESSON => $lesson['0'],
                     \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_TEACHER_OR_CLASS => $lesson['1'],
-                    'cabinet' => $lesson['2'] ?? ''
+                    \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_CABINET => $lesson['2'] ?? ''
                 ];
 
     try {
