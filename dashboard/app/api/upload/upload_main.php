@@ -30,7 +30,7 @@ if (!$file) {
             $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Файл был получен только частично.';
             break;
         case UPLOAD_ERR_NO_FILE:
-            $result_data['error'] = 'Файл не был загружен.';
+            $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Файл не был загружен.';
             break;
         case UPLOAD_ERR_NO_TMP_DIR:
             $result_data['error'] = 'Временная директория отсутствует.';
