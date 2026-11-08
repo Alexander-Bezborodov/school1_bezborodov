@@ -236,7 +236,7 @@ function commonTimeTablesToDatabase(array $inputData): string {
                     \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_ID => $teacher_or_class_key,
                     \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DAY_OF_WEEK => $day_of_week_key,
                     'time' => $lesson['time'],
-                    'number' => $number,
+                    \APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER => $number,
                     'sort' => $lesson['sort'],
                     'lesson' => $lesson['0'],
                     'teacher_or_class' => $lesson['1'],
