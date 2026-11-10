@@ -41,7 +41,7 @@ if (!isset($data[\APP_RELAY_RELAY_PHP_FIELD_KEY_URL])) {
 
 $url = (string)$data['url'];
 $method = strtoupper((string)($data['method'] ?? 'GET'));
-$headers = is_array($data[\APP_RELAY_RELAY_PHP_FIELD_KEY_HEADERS] ?? null) ? $data['headers'] : [];
+$headers = is_array($data[\APP_RELAY_RELAY_PHP_FIELD_KEY_HEADERS] ?? null) ? $data[\APP_RELAY_RELAY_PHP_FIELD_KEY_HEADERS] : [];
 $body = $data['body'] ?? null;
 
 $allowedHosts = array_values(array_filter(array_map('trim', explode(',', getenv('RELAY_ALLOWED_HOSTS') ?: 'api.telegram.org'))));
