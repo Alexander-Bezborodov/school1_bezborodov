@@ -126,7 +126,7 @@ final class Auth
             'expires' => time() - 3600,
             'path' => '/',
             self::FIELD_KEY_DOMAIN => '',
-            'secure' => $secure,
+            self::FIELD_KEY_SECURE => $secure,
             'httponly' => true,
             'samesite' => 'Lax',
         ]);
