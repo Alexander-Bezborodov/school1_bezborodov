@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_EXP = 'exp';
+
     private const FIELD_KEY_TOKEN = 'token';
 
     private const FIELD_KEY_ID = 'id';
@@ -162,7 +164,7 @@ final class Auth
         $payload = [
             self::FIELD_KEY_ID => (int)$user['id'],
             self::FIELD_KEY_TOKEN => $token,
-            'exp' => time() + self::$cookieLifetime,
+            self::FIELD_KEY_EXP => time() + self::$cookieLifetime,
         ];
         $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE);
         if ($payloadJson === false) {
