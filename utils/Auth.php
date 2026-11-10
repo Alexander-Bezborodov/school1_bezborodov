@@ -127,7 +127,7 @@ final class Auth
             'path' => '/',
             self::FIELD_KEY_DOMAIN => '',
             self::FIELD_KEY_SECURE => $secure,
-            'httponly' => true,
+            self::FIELD_KEY_HTTPONLY => true,
             'samesite' => 'Lax',
         ]);
         unset($_COOKIE[$name]);
