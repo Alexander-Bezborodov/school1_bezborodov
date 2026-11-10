@@ -125,7 +125,7 @@ final class Auth
         setcookie($name, '', [
             'expires' => time() - 3600,
             'path' => '/',
-            'domain' => '',
+            self::FIELD_KEY_DOMAIN => '',
             'secure' => $secure,
             'httponly' => true,
             'samesite' => 'Lax',
