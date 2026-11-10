@@ -140,7 +140,7 @@ class SetClassCommand
         }
 
         // Классы
-        if (!empty($result['classes'])) {
+        if (!empty($result[self::FIELD_KEY_CLASSES])) {
             usort($result['classes'], function ($a, $b) {
                 preg_match('/^(\d+)([А-Я])$/u', $a, $ma);
                 preg_match('/^(\d+)([А-Я])$/u', $b, $mb);
