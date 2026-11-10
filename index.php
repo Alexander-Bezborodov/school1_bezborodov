@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_INDEX_PHP_FIELD_KEY_POLICY_CONFIRMED')) { define('APP_INDEX_PHP_FIELD_KEY_POLICY_CONFIRMED', 'policy_confirmed'); }
+
 date_default_timezone_set('Asia/Yekaterinburg');
 
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
@@ -122,7 +124,7 @@ $libScripts = [
 
 <body>
     <?php
-    $policyConfirmed = isset($_COOKIE['policy_confirmed']) && $_COOKIE['policy_confirmed'] === '1';
+    $policyConfirmed = isset($_COOKIE[\APP_INDEX_PHP_FIELD_KEY_POLICY_CONFIRMED]) && $_COOKIE['policy_confirmed'] === '1';
     if (!$policyConfirmed): ?>
         <div class="confirm confirm--cookie confirm--show">
             <div class="confirm__content timetable__item item--clear">
