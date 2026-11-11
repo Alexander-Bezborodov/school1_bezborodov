@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_AUTH_KEY = 'auth_key';
+
     private const FIELD_KEY_BAN = 'ban';
 
     private const FIELD_KEY_EXP = 'exp';
@@ -240,7 +242,7 @@ final class Auth
     // ----------------------
     public static function check()
     {
-        if (empty($_COOKIE['auth_key']) || empty($_COOKIE['account_id'])) {
+        if (empty($_COOKIE[self::FIELD_KEY_AUTH_KEY]) || empty($_COOKIE['account_id'])) {
             return false;
         }
 
