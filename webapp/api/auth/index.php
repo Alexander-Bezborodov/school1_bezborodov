@@ -108,7 +108,7 @@ try {
         'auth_teacher',
         $token,
         [
-            'expires' => time() + 60 * 60 * 24 * 30,
+            \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_EXPIRES => time() + 60 * 60 * 24 * 30,
             'path' => '/',
             'httponly' => false,
             'secure' => isset($_SERVER['HTTPS']),
