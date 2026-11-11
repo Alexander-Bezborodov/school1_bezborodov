@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_BAN = 'ban';
+
     private const FIELD_KEY_EXP = 'exp';
 
     private const FIELD_KEY_TOKEN = 'token';
@@ -209,7 +211,7 @@ final class Auth
             $callbackMessage = 'Authorization error';
         }
 
-        if (!empty($user['ban']) && (int)$user['ban'] === 1) {
+        if (!empty($user[self::FIELD_KEY_BAN]) && (int)$user['ban'] === 1) {
             $callbackMessage = 'Your account has been blocked. Contact technical support.';
         }
 
