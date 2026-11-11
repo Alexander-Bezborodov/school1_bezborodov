@@ -10,7 +10,7 @@ header('Content-Type: application/json; charset=utf-8');
 $input = json_decode(file_get_contents('php://input'), true);
 
 // можно проверить входные данные (опционально)
-$confirmed = isset($input[\APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_CONFIRMED]) && $input['confirmed'] === true;
+$confirmed = isset($input[\APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_CONFIRMED]) && $input[\APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_CONFIRMED] === true;
 
 if ($confirmed) {
     // 10 лет (почти "бесконечно")
