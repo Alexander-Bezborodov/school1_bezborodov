@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_MESSAGE = 'message';
+
     private const FIELD_KEY_BOLD = 'bold';
 
     private const FIELD_KEY_CAPTION = 'caption';
@@ -64,7 +66,7 @@ class Bot
     private function registerCallbacks()
     {
         $this->callbackHandlers['policy_confirmed'] = function ($callback) {
-            $message = $callback['message'];
+            $message = $callback[self::FIELD_KEY_MESSAGE];
             $chatId = $message['chat']['id'];
             $messageId = $message['message_id'];
 
