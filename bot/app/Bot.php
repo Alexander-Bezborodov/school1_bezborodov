@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_TEXT = 'text';
+
     private const FIELD_KEY_MESSAGE_ID = 'message_id';
 
     private const FIELD_KEY_ID = 'id';
@@ -259,7 +261,7 @@ class Bot
     private function managementMessage($chatId, $message)
     {
         $username = $message['chat']['username'] ?? '';
-        $text = $message['text'] ?? '';
+        $text = $message[self::FIELD_KEY_TEXT] ?? '';
         $textEl = trim($text);
 
         if (IS_MAINTENANCE_MODE && !$this->isAdmin($chatId)) {
