@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_MESSAGE_ID = 'message_id';
+
     private const FIELD_KEY_ID = 'id';
 
     private const FIELD_KEY_CHAT = 'chat';
@@ -72,7 +74,7 @@ class Bot
         $this->callbackHandlers['policy_confirmed'] = function ($callback) {
             $message = $callback[self::FIELD_KEY_MESSAGE];
             $chatId = $message[self::FIELD_KEY_CHAT][self::FIELD_KEY_ID];
-            $messageId = $message['message_id'];
+            $messageId = $message[self::FIELD_KEY_MESSAGE_ID];
 
             DB::execute("
                 INSERT INTO users__policy (chat_id, confirm) 
