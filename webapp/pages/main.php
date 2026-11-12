@@ -1,10 +1,12 @@
 <?php
+
+if (!defined('APP_WEBAPP_PAGES_MAIN_PHP_FIELD_KEY_CLASSES')) { define('APP_WEBAPP_PAGES_MAIN_PHP_FIELD_KEY_CLASSES', 'classes'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 $classes = getLastListOfClasses();
 
 $activeClasses = [];
 
-if (!empty($_COOKIE['classes'])) {
+if (!empty($_COOKIE[\APP_WEBAPP_PAGES_MAIN_PHP_FIELD_KEY_CLASSES])) {
     $activeClasses = array_filter(
         explode(',', $_COOKIE['classes']),
         fn($c) => mb_strlen($c) <= 4
