@@ -141,7 +141,7 @@ class SetClassCommand
 
         // Классы
         if (!empty($result[self::FIELD_KEY_CLASSES])) {
-            usort($result['classes'], function ($a, $b) {
+            usort($result[self::FIELD_KEY_CLASSES], function ($a, $b) {
                 preg_match('/^(\d+)([А-Я])$/u', $a, $ma);
                 preg_match('/^(\d+)([А-Я])$/u', $b, $mb);
                 $numA = (int) $ma[1];
