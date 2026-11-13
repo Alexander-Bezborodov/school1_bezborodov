@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_CHAT_ID = 'chat_id';
+
     private const FIELD_KEY_TEXT = 'text';
 
     private const FIELD_KEY_MESSAGE_ID = 'message_id';
@@ -453,7 +455,7 @@ class Bot
         }
 
         $data = [
-            'chat_id' => $chatId,
+            self::FIELD_KEY_CHAT_ID => $chatId,
             'text' => $text,
             self::FIELD_KEY_PARSE_MODE => 'HTML'
         ];
