@@ -482,7 +482,7 @@ class Bot
             'chat_id' => $chatId,
             'message_id' => $messageId,
             'text' => $text,
-            'parse_mode' => 'HTML'
+            self::FIELD_KEY_PARSE_MODE => 'HTML'
         ];
 
         if ($keyboard) {
