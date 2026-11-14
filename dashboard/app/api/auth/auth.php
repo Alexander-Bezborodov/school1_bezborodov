@@ -22,7 +22,7 @@ $password = trim($_POST['password'] ?? '');
 
 if (!$token || !$password) {
     http_response_code(400);
-    echo json_encode(['status' => 'error', 'message' => 'Заполните все поля']);
+    echo json_encode([\APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS => 'error', 'message' => 'Заполните все поля']);
     exit;
 }
 
