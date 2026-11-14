@@ -37,7 +37,7 @@ class StatsCommand
     WHERE chat_id != '1517511920' 
       AND action_date >= NOW() - INTERVAL 24 HOUR
 ");
-        $active24hCount = (int) $active24hRow['count'];
+        $active24hCount = (int) $active24hRow[self::FIELD_KEY_COUNT];
 
         // Активные за последнюю неделю
         $activeWeekRow = DB::selectOne("
