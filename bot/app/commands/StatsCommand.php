@@ -63,7 +63,7 @@ class StatsCommand
         }
 
         // Часто используемые значения
-        $userName = !empty($lastUser[self::FIELD_KEY_USERNAME]) ? "@" . $lastUser['username'] : $lastUser['chat_id'];
+        $userName = !empty($lastUser[self::FIELD_KEY_USERNAME]) ? "@" . $lastUser[self::FIELD_KEY_USERNAME] : $lastUser['chat_id'];
         $vipPrefix = $lastUser['vip'] == 1 ? "👑 " : "";
         $now = new DateTime();
 
