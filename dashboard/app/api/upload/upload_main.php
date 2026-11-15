@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_TMP_NAME')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_TMP_NAME', 'tmp_name'); }
+
 if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME', 'name'); }
 
 if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR', 'error'); }
@@ -47,7 +49,7 @@ if (!$file) {
     }
 } elseif (($file['size'] ?? 0) > $maxFileSize) {
     $result_data['error'] = 'Размер файла превышает 15 МБ.';
-} elseif (!is_uploaded_file($file['tmp_name'])) {
+} elseif (!is_uploaded_file($file[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_TMP_NAME])) {
     $result_data['error'] = 'Некорректная загрузка файла.';
 } else {
     // Проверка расширения файла
