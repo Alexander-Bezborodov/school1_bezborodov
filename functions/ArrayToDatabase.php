@@ -81,7 +81,7 @@ function deleteOneDayByDate(string $date): bool {
         return false;
 
     try {
-        DB::execute('DELETE FROM `timetable` WHERE `date`=:date', ['date' => $date]);
+        DB::execute('DELETE FROM `timetable` WHERE `date`=:date', [\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_DATE => $date]);
     } catch (Exception $e) {
         return false;
     }
