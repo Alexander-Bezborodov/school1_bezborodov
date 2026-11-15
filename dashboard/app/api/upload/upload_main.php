@@ -36,7 +36,7 @@ if (!$file) {
             $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Временная директория отсутствует.';
             break;
         case UPLOAD_ERR_CANT_WRITE:
-            $result_data['error'] = 'Не удалось записать файл на диск.';
+            $result_data[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_ERROR] = 'Не удалось записать файл на диск.';
             break;
         case UPLOAD_ERR_EXTENSION:
             $result_data['error'] = 'PHP-расширение остановило загрузку файла.';
