@@ -2,6 +2,8 @@
 
 class Router
 {
+    private const FIELD_KEY_CONTROLLER = 'controller';
+
     /**
      * Конфигурация маршрутов:
      * 'путь' => [
@@ -71,7 +73,7 @@ class Router
         // Если стандартные маршруты определены
         if (isset(self::$routes[$page])) {
             $route = self::$routes[$page];
-            if (isset($route['controller'])) {
+            if (isset($route[self::FIELD_KEY_CONTROLLER])) {
                 [$class, $method] = $route['controller'];
                 call_user_func([$class, $method]);
             } elseif (isset($route['view'])) {
