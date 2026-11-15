@@ -273,7 +273,7 @@ function getLastListOfIds(): array {
 
     $ids = [];
     foreach ($result as $row)
-        $ids[] = $row['id'];
+        $ids[] = $row[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_ID];
 
     return $ids;
 }
