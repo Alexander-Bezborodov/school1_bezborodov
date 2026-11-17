@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_FUNCTIONS_CORE_PHP_FIELD_KEY_START')) { define('APP_FUNCTIONS_CORE_PHP_FIELD_KEY_START', 'start'); }
 date_default_timezone_set('Europe/Moscow');
 
 include_once __DIR__ . "/database/db.php";
@@ -252,7 +254,7 @@ function getScheduleEmoji($getDefaultPack = true): string
     // Формат: 'ключ_праздника' => ['start' => 'mm-dd', 'end' => 'mm-dd']
     $holidayRanges = [
         // Новый год с 10 декабря по 1 января
-        '01-01' => ['start' => '12-10', 'end' => '01-01'],
+        '01-01' => [\APP_FUNCTIONS_CORE_PHP_FIELD_KEY_START => '12-10', 'end' => '01-01'],
 
         // Валентин — за 3 дня: с 11 по 14 февраля
         '02-14' => ['start' => '02-12', 'end' => '02-14'],
