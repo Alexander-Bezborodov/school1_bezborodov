@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_INDEX_PHP_FIELD_KEY_PATH')) { define('APP_INDEX_PHP_FIELD_KEY_PATH', 'path'); }
+
 if (!defined('APP_INDEX_PHP_FIELD_KEY_POLICY_CONFIRMED')) { define('APP_INDEX_PHP_FIELD_KEY_POLICY_CONFIRMED', 'policy_confirmed'); }
 
 date_default_timezone_set('Asia/Yekaterinburg');
@@ -65,7 +67,7 @@ if (session_status() === PHP_SESSION_NONE) {
     $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
     session_set_cookie_params([
         'lifetime' => $cookieParams['lifetime'],
-        'path' => $cookieParams['path'] ?? '/',
+        \APP_INDEX_PHP_FIELD_KEY_PATH => $cookieParams['path'] ?? '/',
         'domain' => $cookieParams['domain'] ?? '',
         'secure' => $secure,
         'httponly' => true,
