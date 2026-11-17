@@ -7,6 +7,8 @@ require_once __DIR__ . "/../functions/core.php";
 
 final class Auth
 {
+    private const FIELD_KEY_ROLE = 'role';
+
     private const FIELD_KEY_AUTH_KEY = 'auth_key';
 
     private const FIELD_KEY_BAN = 'ban';
@@ -218,7 +220,7 @@ final class Auth
         }
 
         // Права: используем значения из $user вместо повторных DB-запросов
-        $isAdmin = isset($user['role']) && $user['role'] === 'ADMIN';
+        $isAdmin = isset($user[self::FIELD_KEY_ROLE]) && $user['role'] === 'ADMIN';
         if (($checkAdmin && !$isAdmin && !$checkUser) || ($isAdmin && $checkUser && !$checkAdmin)) {
             $callbackMessage = 'Insufficient permissions';
         }
