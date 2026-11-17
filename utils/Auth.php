@@ -129,7 +129,7 @@ final class Auth
     {
         $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
         setcookie($name, '', [
-            'expires' => time() - 3600,
+            self::FIELD_KEY_EXPIRES => time() - 3600,
             'path' => '/',
             self::FIELD_KEY_DOMAIN => '',
             self::FIELD_KEY_SECURE => $secure,
