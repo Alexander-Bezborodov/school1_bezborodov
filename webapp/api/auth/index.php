@@ -109,7 +109,7 @@ try {
         $token,
         [
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_EXPIRES => time() + 60 * 60 * 24 * 30,
-            'path' => '/',
+            \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_PATH => '/',
             'httponly' => false,
             \APP_WEBAPP_API_AUTH_INDEX_PHP_FIELD_KEY_SECURE => isset($_SERVER['HTTPS']),
             'samesite' => 'Lax'
