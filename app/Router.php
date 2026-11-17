@@ -2,6 +2,8 @@
 
 class Router
 {
+    private const FIELD_KEY_VIEW = 'view';
+
     private const FIELD_KEY_CONTROLLER = 'controller';
 
     /**
@@ -15,7 +17,7 @@ class Router
     private static array $routes = [
         '' => [
             'title' => '__HOME__',
-            'view' => '/views/home.php',
+            self::FIELD_KEY_VIEW => '/views/home.php',
         ],
         'home' => [
             'title' => '__HOME__',
