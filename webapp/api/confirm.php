@@ -35,6 +35,6 @@ if ($confirmed) {
 }
 
 echo json_encode([
-    'success' => false,
+    \APP_WEBAPP_API_CONFIRM_PHP_FIELD_KEY_SUCCESS => false,
     'message' => 'Invalid request'
 ]);
