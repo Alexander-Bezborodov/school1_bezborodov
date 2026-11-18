@@ -456,7 +456,7 @@ class Bot
 
         $data = [
             self::FIELD_KEY_CHAT_ID => $chatId,
-            'text' => $text,
+            self::FIELD_KEY_TEXT => $text,
             self::FIELD_KEY_PARSE_MODE => 'HTML'
         ];
 
