@@ -1,4 +1,6 @@
 <?php
+
+if (!defined('APP_APP_PAGES_FULL_PHP_FIELD_KEY_DATE')) { define('APP_APP_PAGES_FULL_PHP_FIELD_KEY_DATE', 'date'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 $user = Auth::requireAuth();
@@ -20,7 +22,7 @@ $isLoadedCommon =
 //$isLoadedTeachers = getLessonsByDate(getNextDayDate(), $teachers[0]) != [];
 
 try {
-    $count = DB::selectOne('SELECT COUNT(*) as Count FROM `timetable` WHERE `date`=:date AND CHAR_LENGTH(TRIM(id))<3', ['date' => getNextDayDate()])['Count'];
+    $count = DB::selectOne('SELECT COUNT(*) as Count FROM `timetable` WHERE `date`=:date AND CHAR_LENGTH(TRIM(id))<3', [\APP_APP_PAGES_FULL_PHP_FIELD_KEY_DATE => getNextDayDate()])['Count'];
     $isLoadedDefault = $count > 0;
 } catch (Exception $e) {
     $isLoadedDefault = false;
