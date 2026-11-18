@@ -532,7 +532,7 @@ class Bot
             'chat_id' => $chatId,
             'photo' => new CURLFile($filePath),
             self::FIELD_KEY_CAPTION => $caption,
-            'parse_mode' => 'HTML'
+            self::FIELD_KEY_PARSE_MODE => 'HTML'
         ];
 
         if ($keyboard) {
