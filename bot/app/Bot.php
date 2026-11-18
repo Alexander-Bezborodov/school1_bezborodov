@@ -479,7 +479,7 @@ class Bot
     public function editMessage($chatId, $messageId, string $text, $keyboard = null): bool
     {
         $data = [
-            'chat_id' => $chatId,
+            self::FIELD_KEY_CHAT_ID => $chatId,
             'message_id' => $messageId,
             'text' => $text,
             self::FIELD_KEY_PARSE_MODE => 'HTML'
