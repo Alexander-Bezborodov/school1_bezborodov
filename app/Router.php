@@ -21,7 +21,7 @@ class Router
         ],
         'home' => [
             'title' => '__HOME__',
-            'view' => '/views/home.php',
+            self::FIELD_KEY_VIEW => '/views/home.php',
         ],
     ];
 
