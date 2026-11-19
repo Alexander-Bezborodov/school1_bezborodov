@@ -63,7 +63,7 @@ function shutdown_notify()
 
     if ($error['type'] == E_ERROR && mb_strpos($error[\APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE], 'Maximum execution time') !== false) {
         die("<p>Формирование страницы затянулось на продолжительное время и было остановлено</p>");
-    } elseif ($error['type'] == E_WARNING && mb_strpos($error['message'], 'mysqli_free_result()') !== false) {
+    } elseif ($error['type'] == E_WARNING && mb_strpos($error[\APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_MESSAGE], 'mysqli_free_result()') !== false) {
         // не интересует
     } else {
         RegisterSiteError($error['type'], $error['message'], $error[\APP_BOT_APP_WEBHOOK_PHP_FIELD_KEY_FILE], $error['line']);
