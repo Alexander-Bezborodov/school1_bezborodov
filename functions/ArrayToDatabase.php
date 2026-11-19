@@ -328,7 +328,7 @@ function getLessonsByDate(string $date, string $id): array {
     $result = [];
 
     foreach ($rows as $row)
-        $result[$row[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER]] = [\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUM => $row['number'], 'time' => $row['time'], '0' => $row['lesson'], '1' => $row['teacher_or_class'], '2' => $row['cabinet']];
+        $result[$row[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER]] = [\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUM => $row[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER], 'time' => $row['time'], '0' => $row['lesson'], '1' => $row['teacher_or_class'], '2' => $row['cabinet']];
 
     return $result;
 }
