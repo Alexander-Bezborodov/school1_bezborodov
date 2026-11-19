@@ -701,7 +701,7 @@ class Bot
 
             return [
                 'regular' => $regularPath,
-                'bold' => $boldPath,
+                self::FIELD_KEY_BOLD => $boldPath,
                 self::FIELD_KEY_CUSTOM => $isCustom
             ];
         }
