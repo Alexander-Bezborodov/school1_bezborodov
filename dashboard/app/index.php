@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_LIFETIME')) { define('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_LIFETIME', 'lifetime'); }
+
 if (!defined('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH')) { define('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH', 'path'); }
 
 
@@ -82,7 +84,7 @@ if (session_status() === PHP_SESSION_NONE) {
     $cookieParams = session_get_cookie_params();
     $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
     session_set_cookie_params([
-        'lifetime' => $cookieParams['lifetime'],
+        \APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_LIFETIME => $cookieParams['lifetime'],
         \APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH => $cookieParams['path'] ?? '/',
         'domain' => $cookieParams['domain'] ?? '',
         'secure' => $secure,
