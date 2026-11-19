@@ -43,6 +43,6 @@ try {
     http_response_code(500);
     echo json_encode([
         'status' => 'error',
-        'callback' => 'Ошибка сервера'
+        \APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_CALLBACK => 'Ошибка сервера'
     ]);
 }
