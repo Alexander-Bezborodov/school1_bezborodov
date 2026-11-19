@@ -77,7 +77,7 @@ class SetClassCommand
              VALUES (:chat_id, :username, :group_members_count)",
                 [
                     self::FIELD_KEY_CHAT_ID => $chatId,
-                    'username' => $chatUsername,
+                    self::FIELD_KEY_USERNAME => $chatUsername,
                     'group_members_count' => $groupMembers
                 ]
             );
