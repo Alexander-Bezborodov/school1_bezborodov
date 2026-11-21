@@ -84,7 +84,7 @@ class Bot
                 INSERT INTO users__policy (chat_id, confirm) 
                 VALUES (:id, 1)
                 ON DUPLICATE KEY UPDATE confirm = 1
-            ", ['id' => $chatId]);
+            ", [self::FIELD_KEY_ID => $chatId]);
 
             $this->deleteMessage($chatId, $messageId);
             (new OptParallelCommand($this))->execute($message);
