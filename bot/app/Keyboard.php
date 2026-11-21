@@ -2,6 +2,8 @@
 
 class Keyboard
 {
+    private const FIELD_KEY_TEXT = 'text';
+
     /**
      * Создает inline-клавиатуру
      *
@@ -26,7 +28,7 @@ class Keyboard
     public static function button(string $text, string $callback_data, $color = null): array
     {
         $button = [
-            'text' => $text,
+            self::FIELD_KEY_TEXT => $text,
             'callback_data' => $callback_data,
         ];
 
