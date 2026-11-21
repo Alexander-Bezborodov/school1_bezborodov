@@ -78,7 +78,7 @@ class Router
             if (isset($route[self::FIELD_KEY_CONTROLLER])) {
                 [$class, $method] = $route[self::FIELD_KEY_CONTROLLER];
                 call_user_func([$class, $method]);
-            } elseif (isset($route['view'])) {
+            } elseif (isset($route[self::FIELD_KEY_VIEW])) {
                 require_once $baseDir . $route['view'];
             }
             return;
