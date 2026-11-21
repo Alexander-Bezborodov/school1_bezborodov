@@ -104,7 +104,7 @@ class Bot
         $this->logger->logArray($update, 'Incoming update:');
 
         // --- Обработка сообщений ---
-        if (isset($update['message'])) {
+        if (isset($update[self::FIELD_KEY_MESSAGE])) {
             $message = $update['message'];
             $chatId = $message['chat']['id'];
             try {
