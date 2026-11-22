@@ -29,7 +29,7 @@ if (!$token || !$password) {
 try {
     if (Auth::login($token, $password)) {
         echo json_encode([
-            'status' => 'ok',
+            \APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_STATUS => 'ok',
             \APP_DASHBOARD_APP_API_AUTH_AUTH_PHP_FIELD_KEY_CALLBACK => 'Вы успешно вошли в систему'
         ]);
     } else {
