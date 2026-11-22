@@ -46,7 +46,7 @@ class StatsCommand
     WHERE chat_id != '1517511920' 
       AND action_date >= NOW() - INTERVAL 7 DAY
 ");
-        $activeWeekCount = (int) $activeWeekRow['count'];
+        $activeWeekCount = (int) $activeWeekRow[self::FIELD_KEY_COUNT];
 
         // Получаем последнего активного пользователя (кроме исключенного ID)
         $lastUser = DB::selectOne("
