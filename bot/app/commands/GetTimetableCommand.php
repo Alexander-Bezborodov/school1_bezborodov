@@ -3,6 +3,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class GetTimetableCommand
 {
+    private const FIELD_KEY_INLINE_KEYBOARD = 'inline_keyboard';
+
     private const FIELD_KEY_FILE = 'file';
 
     private const FIELD_KEY_ERROR = 'error';
@@ -55,7 +57,7 @@ class GetTimetableCommand
         // Формируем клавиатуру, если больше одного класса
         $keyboard = null;
         if (count($classes) > 1 && !($user["teacher_name"] !== null && $user["hide_classes"] == 1)) {
-            $keyboard = ['inline_keyboard' => []];
+            $keyboard = [self::FIELD_KEY_INLINE_KEYBOARD => []];
             $row = [];
             $e = "🔹";
             $activeBtnBackground = "primary";
