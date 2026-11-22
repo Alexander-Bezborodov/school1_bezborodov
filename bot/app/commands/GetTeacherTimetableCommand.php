@@ -3,6 +3,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class GetTeacherTimetableCommand
 {
+    private const FIELD_KEY_FILE = 'file';
+
     private Bot $bot;
 
     public function __construct(Bot $bot)
@@ -63,7 +65,7 @@ class GetTeacherTimetableCommand
                 return;
             }
 
-            if (!isset($data['file'])) {
+            if (!isset($data[self::FIELD_KEY_FILE])) {
                 $this->bot->sendMessage($chatId, "⛔ Нет данных для изображения");
                 return;
             }
