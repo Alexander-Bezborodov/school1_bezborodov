@@ -571,7 +571,7 @@ class Bot
         $media = [
             'type' => 'photo',
             'media' => 'attach://new_photo',
-            'caption' => $newCaption,
+            self::FIELD_KEY_CAPTION => $newCaption,
             'parse_mode' => 'HTML'
         ];
 
