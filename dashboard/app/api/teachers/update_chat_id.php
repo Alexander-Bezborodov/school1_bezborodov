@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ERROR')) { define('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ERROR', 'error'); }
+
 if (!defined('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY')) { define('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY', 'access_key'); }
 require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
@@ -14,7 +16,7 @@ header('Content-Type: application/json; charset=utf-8');
 // Проверяем метод запроса
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['error' => 'Method not allowed']);
+    echo json_encode([\APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ERROR => 'Method not allowed']);
     exit;
 }
 
