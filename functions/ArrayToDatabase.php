@@ -344,7 +344,7 @@ function getLessonsByDateFromCommonTtimeTable(string $day_of_week, string $id): 
     $result = [];
 
     foreach ($rows as $row)
-        $result[$row['number']] = ['num' => $row['number'], 'time' => $row['time'], '0' => $row['lesson'], '1' => $row['teacher_or_class'], '2' => $row['cabinet']];
+        $result[$row[\APP_FUNCTIONS_ARRAYTODATABASE_PHP_FIELD_KEY_NUMBER]] = ['num' => $row['number'], 'time' => $row['time'], '0' => $row['lesson'], '1' => $row['teacher_or_class'], '2' => $row['cabinet']];
 
     return $result;
 }
