@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_CHAT_ID')) { define('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_CHAT_ID', 'chat_id'); }
+
 if (!defined('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ERROR')) { define('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ERROR', 'error'); }
 
 if (!defined('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY')) { define('APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_ACCESS_KEY', 'access_key'); }
@@ -22,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // Получаем и валидируем данные
 $teacher = trim($_POST['teacher'] ?? '');
-$chatId = trim($_POST['chat_id'] ?? '');
+$chatId = trim($_POST[\APP_DASHBOARD_APP_API_TEACHERS_UPDATE_CHAT_ID_PHP_FIELD_KEY_CHAT_ID] ?? '');
 
 if ($teacher === '') {
     http_response_code(400);
