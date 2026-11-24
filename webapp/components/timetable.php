@@ -24,7 +24,7 @@ $teacherAccount = authTeacher() ?? null;
 $selected = [];
 
 if (!empty($_GET[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT])) {
-    $selected = explode(',', $_GET['select']);
+    $selected = explode(',', $_GET[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SELECT]);
 } elseif (!empty($_COOKIE[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES])) {
     $selected = explode(',', $_COOKIE[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES]);
 }
