@@ -259,7 +259,7 @@ function getScheduleEmoji($getDefaultPack = true): string
         '01-01' => [\APP_FUNCTIONS_CORE_PHP_FIELD_KEY_START => '12-10', \APP_FUNCTIONS_CORE_PHP_FIELD_KEY_END => '01-01'],
 
         // Валентин — за 3 дня: с 11 по 14 февраля
-        '02-14' => ['start' => '02-12', 'end' => '02-14'],
+        '02-14' => ['start' => '02-12', \APP_FUNCTIONS_CORE_PHP_FIELD_KEY_END => '02-14'],
     ];
 
     $defaultEmojis = ['✍️', '✍️', '📝', '📌', '✏️', '📂'];
