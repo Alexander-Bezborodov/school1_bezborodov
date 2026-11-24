@@ -168,7 +168,7 @@ final class Auth
 
         // Подготавливаем полезную нагрузку auth_key (без пароля)
         $payload = [
-            self::FIELD_KEY_ID => (int)$user['id'],
+            self::FIELD_KEY_ID => (int)$user[self::FIELD_KEY_ID],
             self::FIELD_KEY_TOKEN => $token,
             self::FIELD_KEY_EXP => time() + self::$cookieLifetime,
         ];
