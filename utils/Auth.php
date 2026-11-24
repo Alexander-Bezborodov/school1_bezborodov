@@ -266,7 +266,7 @@ final class Auth
         }
 
         $decoded = json_decode($payloadJson, true);
-        if (!$decoded || empty($decoded['id']) || empty($decoded['token']) || empty($decoded['exp'])) {
+        if (!$decoded || empty($decoded['id']) || empty($decoded[self::FIELD_KEY_TOKEN]) || empty($decoded['exp'])) {
             return false;
         }
 
