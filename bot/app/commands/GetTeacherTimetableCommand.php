@@ -3,6 +3,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class GetTeacherTimetableCommand
 {
+    private const FIELD_KEY_ERROR = 'error';
+
     private const FIELD_KEY_FILE = 'file';
 
     private Bot $bot;
@@ -60,7 +62,7 @@ class GetTeacherTimetableCommand
             $font = $this->bot->getFontByUser($user);
             $data = arrayToImage($teacherName, $timetable, $font['regular'], $font['bold']);
 
-            if (isset($data['error'])) {
+            if (isset($data[self::FIELD_KEY_ERROR])) {
                 $this->bot->sendMessage($chatId, $data['error']);
                 return;
             }
