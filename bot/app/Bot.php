@@ -92,7 +92,7 @@ class Bot
 
         $this->callbackHandlers['close'] = function ($callback) {
             $message = $callback[self::FIELD_KEY_MESSAGE];
-            $chatId = $message[self::FIELD_KEY_CHAT]['id'];
+            $chatId = $message[self::FIELD_KEY_CHAT][self::FIELD_KEY_ID];
             $messageId = $message[self::FIELD_KEY_MESSAGE_ID];
             $this->deleteMessage($chatId, $messageId);
             $this->deleteMessage($chatId, $messageId - 1);
