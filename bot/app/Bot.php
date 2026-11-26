@@ -106,7 +106,7 @@ class Bot
         // --- Обработка сообщений ---
         if (isset($update[self::FIELD_KEY_MESSAGE])) {
             $message = $update['message'];
-            $chatId = $message['chat']['id'];
+            $chatId = $message[self::FIELD_KEY_CHAT]['id'];
             try {
                 $this->managementMessage($chatId, $message);
             } catch (Exception $e) {
