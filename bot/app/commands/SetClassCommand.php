@@ -134,7 +134,7 @@ class SetClassCommand
         $messageText = '';
 
         // Параллели
-        if (!empty($result['parallels'])) {
+        if (!empty($result[self::FIELD_KEY_PARALLELS])) {
             sort($result['parallels'], SORT_NUMERIC);
             $messageText .= "✅ Ты выбрал «" . $this->formatList($result['parallels']) . "» параллель";
         }
