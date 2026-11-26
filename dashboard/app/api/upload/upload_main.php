@@ -1,5 +1,7 @@
 <?php
 
+if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_DATA')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_DATA', 'data'); }
+
 if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_TMP_NAME')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_TMP_NAME', 'tmp_name'); }
 
 if (!defined('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME')) { define('APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_NAME', 'name'); }
@@ -74,7 +76,7 @@ if (!$file) {
             $table = excelToArray($target);
             if (isset($table['error']))
                 $result_data['error'] = $table['error'];
-            elseif (!isset($table['data']))
+            elseif (!isset($table[\APP_DASHBOARD_APP_API_UPLOAD_UPLOAD_MAIN_PHP_FIELD_KEY_DATA]))
                 $result_data['error'] = 'Ошибка разбора файла с расписанием';
             else {
                 if ($commonFlag) {
