@@ -259,7 +259,7 @@ function arrayToImage(string $imageName, array $inputData, string $regularFont, 
     imagewebp($image, $filename, $quality);
 
     // return ['data' => base64_encode($imageData)];
-    return ['file' => $filename];
+    return [\APP_FUNCTIONS_ARRAYTOIMAGE_PHP_FIELD_KEY_FILE => $filename];
 }
 
 function roundCornersWithBorder($image, int $radius = 15, int $borderColorRGB = 0, int $borderWidth = 2)
