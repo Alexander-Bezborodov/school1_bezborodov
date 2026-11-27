@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_DOMAIN')) { define('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_DOMAIN', 'domain'); }
+
 if (!defined('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_LIFETIME')) { define('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_LIFETIME', 'lifetime'); }
 
 if (!defined('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH')) { define('APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH', 'path'); }
@@ -86,7 +88,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_set_cookie_params([
         \APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_LIFETIME => $cookieParams['lifetime'],
         \APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_PATH => $cookieParams['path'] ?? '/',
-        'domain' => $cookieParams['domain'] ?? '',
+        \APP_DASHBOARD_APP_INDEX_PHP_FIELD_KEY_DOMAIN => $cookieParams['domain'] ?? '',
         'secure' => $secure,
         'httponly' => true,
         'samesite' => 'Lax', // или 'Strict' при жёсткой политике
