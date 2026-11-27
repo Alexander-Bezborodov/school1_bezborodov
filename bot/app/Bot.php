@@ -504,7 +504,7 @@ class Bot
     public function deleteMessage($chatId, $messageId): bool
     {
         $data = [
-            'chat_id' => $chatId,
+            self::FIELD_KEY_CHAT_ID => $chatId,
             'message_id' => $messageId
         ];
 
