@@ -304,7 +304,7 @@ final class Auth
             $_SESSION = [];
             if (ini_get('session.use_cookies')) {
                 $params = session_get_cookie_params();
-                setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'] ?? '', $params['secure'] ?? false, $params[self::FIELD_KEY_HTTPONLY] ?? false);
+                setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'] ?? '', $params[self::FIELD_KEY_SECURE] ?? false, $params[self::FIELD_KEY_HTTPONLY] ?? false);
             }
             session_destroy();
         }
