@@ -498,7 +498,7 @@ class Bot
 
         $result = json_decode($response, true);
 
-        return isset($result[self::FIELD_KEY_OK]) && $result['ok'];
+        return isset($result[self::FIELD_KEY_OK]) && $result[self::FIELD_KEY_OK];
     }
 
     public function deleteMessage($chatId, $messageId): bool
