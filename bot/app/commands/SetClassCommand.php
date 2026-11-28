@@ -156,7 +156,7 @@ class SetClassCommand
             else
                 $messageText .= "✅ Ты выбрал ";
 
-            if (count($result['classes']) === 1) {
+            if (count($result[self::FIELD_KEY_CLASSES]) === 1) {
                 $messageText .= "«" . $result['classes'][0] . "» класс";
             } else {
                 $messageText .= "«" . $this->formatList($result['classes']) . "» классы";
