@@ -710,7 +710,7 @@ class Bot
 
         return [
             'regular' => $defaultRegular,
-            'bold' => $defaultBold,
+            self::FIELD_KEY_BOLD => $defaultBold,
             'custom' => false
         ];
     }
