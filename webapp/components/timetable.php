@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+if (!defined('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_FILE')) { define('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_FILE', 'file'); }
+
 if (!defined('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SHARE')) { define('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_SHARE', 'share'); }
 
 if (!defined('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES')) { define('APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_CLASSES', 'classes'); }
@@ -119,7 +121,7 @@ function buildImage(string $class, array $timetable, ?array $font, string $place
 
     $data = arrayToImage($class, $timetable, $regularPath, $boldPath, 70);
 
-    if (empty($data['file'])) {
+    if (empty($data[\APP_WEBAPP_COMPONENTS_TIMETABLE_PHP_FIELD_KEY_FILE])) {
         return $placeholder;
     }
 
