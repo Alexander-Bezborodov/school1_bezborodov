@@ -6,6 +6,8 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/functions/core.php";
 
 class Bot
 {
+    private const FIELD_KEY_REGULAR = 'regular';
+
     private const FIELD_KEY_CHAT_ID = 'chat_id';
 
     private const FIELD_KEY_TEXT = 'text';
@@ -682,7 +684,7 @@ class Bot
 
         if (!$userFont) {
             return [
-                'regular' => $defaultRegular,
+                self::FIELD_KEY_REGULAR => $defaultRegular,
                 self::FIELD_KEY_BOLD => $defaultBold,
                 self::FIELD_KEY_CUSTOM => false
             ];
